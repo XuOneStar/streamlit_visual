@@ -55,16 +55,22 @@ with st.sidebar:
     # **分隔线**
     st.markdown("---")
 
+    # **问卷**
+    st.markdown("### 📝 问卷")
+    长表总分 = st.number_input("中文简化版MSSQ-L总分", value=18.6)
+
+    # **分隔线**
+    st.markdown("---")
+
     # **生理指标（双列布局）**
     st.markdown("### 📊 生理指标")
     col3, col4 = st.columns(2)
     with col3:
-        长表总分 = st.number_input("MSSQ-L 总分", value=18.6)
         皮温mean = st.number_input("皮温 Mean", value=30.5)
+        缓慢胃率 = st.number_input("缓慢胃率", value=0)
         delta_a = st.number_input("△a*", value=1.78)
         delta_b = st.number_input("△b*", value=0.89)
     with col4:
-        缓慢胃率 = st.number_input("缓慢胃率", value=0)
         PIF = st.number_input("PIF", value=1.2)
         Penh = st.number_input("Penh", value=0.5)
         SCL = st.number_input("SCL", value=3.4)
@@ -121,7 +127,7 @@ if st.button("✅ 进行预测", use_container_width=True):
     # **进行预测**
     prediction = bp_model.predict(input_scaled)
 
-    # **显示结果（交换 1 和 0 的显示逻辑）**
+    # **显示结果**
     st.markdown("<br>", unsafe_allow_html=True)
     if prediction[0] == 1:
         st.warning("⚠️ 预测结果：该学生可能有运动病风险！请注意防护措施。")
