@@ -17,7 +17,7 @@ expected_columns = [
 st.markdown(
     """
     <h2 style='text-align: center; font-size: 28px;'>
-        🏃‍♂️ 基于BP神经网络的大学生运动病风险预测系统
+        🏃‍♂️ 基于BP神经网络的大学生运动病风险评估系统
     </h2>
     """,
     unsafe_allow_html=True
