@@ -77,7 +77,7 @@ with st.sidebar:
 
 # **评估按钮居中**
 st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-if st.button("✅ 进行评估", use_container_width=True):
+if st.button("✅ 开始评估", use_container_width=True):
     # **处理输入数据**
     input_data = {
         "饮酒": 饮酒,
