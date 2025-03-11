@@ -25,7 +25,7 @@ st.markdown(
 
 # **引导文本（更小字体）**
 st.markdown(
-    "<p style='text-align: center; font-size: 12px; color: gray;'>在左侧侧边栏输入特征值，点击下方按钮开始预测</p>",
+    "<p style='text-align: center; font-size: 12px; color: gray;'>在左侧侧边栏输入特征值，点击下方按钮开始评估</p>",
     unsafe_allow_html=True
 )
 
@@ -75,9 +75,9 @@ with st.sidebar:
         Penh = st.number_input("Penh", value=0.5)
         SCL = st.number_input("SCL", value=3.4)
 
-# **预测按钮居中**
+# **评估按钮居中**
 st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-if st.button("✅ 进行预测", use_container_width=True):
+if st.button("✅ 进行评估", use_container_width=True):
     # **处理输入数据**
     input_data = {
         "饮酒": 饮酒,
@@ -124,13 +124,13 @@ if st.button("✅ 进行预测", use_container_width=True):
     # **标准化数据**
     input_scaled = scaler.transform(input_df)
 
-    # **进行预测**
+    # **进行评估**
     prediction = bp_model.predict(input_scaled)
 
     # **显示结果**
     st.markdown("<br>", unsafe_allow_html=True)
     if prediction[0] == 1:
-        st.warning("⚠️ 预测结果：该学生可能有运动病风险！请注意防护措施。")
+        st.warning("⚠️ 评估结果：该学生可能有运动病风险！请注意防护措施。")
     else:
-        st.success("✅ 预测结果：该学生无明显运动病风险！请保持健康生活习惯。")
+        st.success("✅ 评估结果：该学生无明显运动病风险！请保持健康生活习惯。")
 st.markdown("</div>", unsafe_allow_html=True)
