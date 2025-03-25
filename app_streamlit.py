@@ -46,9 +46,9 @@ with st.sidebar:
             [1, 2, 3, 4], 
             format_func=lambda x: {
                 1: "正常(0度)",
-                2: "低度(1-300度)",
-                3: "中度(301-600度)",
-                4: "高度(>600度)"
+                2: "轻度近视(1-300度)",
+                3: "中度近视(301-600度)",
+                4: "重度近视(>600度)"
             }[x]
         )
 
@@ -68,8 +68,8 @@ with st.sidebar:
     with col3:
         皮温mean = st.number_input("皮温 Mean", value=30.5)
         缓慢胃率 = st.number_input("缓慢胃率", value=0)
-        delta_a = st.number_input("△a*", value=1.78)
-        delta_b = st.number_input("△b*", value=0.89)
+        delta_a = st.number_input("△a", value=1.78)
+        delta_b = st.number_input("△b", value=0.89)
     with col4:
         PIF = st.number_input("PIF", value=1.2)
         Penh = st.number_input("Penh", value=0.5)
